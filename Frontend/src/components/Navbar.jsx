@@ -7,7 +7,9 @@ const Navbar = () => {
     <header className='bg-blue-600 text-white p-4'>
         <div className='container mx-auto'>
             <div className='flex justify-between items-center'>
+                <Link to="/">
                 <h1 className='text-2xl font-bold'>Notes App</h1>
+                </Link>
                 <div className='space-x-4'>
                     <Link to="/Create" className='btn btn-primary'>
                         <PlusIcon className='size-5' />
