@@ -4,13 +4,14 @@ import HomePage from './pages/HomePage.jsx'
 import CreatePage from './pages/CreatePage.jsx'
 import NoteDetailPage from './pages/NoteDetailPage.jsx'
 import Navbar from './components/Navbar.jsx'
+import Navbar2 from './components/Navbar2.jsx'
 import Register from './pages/Register.jsx'
 
 
 const App = () => {
   return (
     <div>
-      <Navbar />
+      <Navbar2 />
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<Register />} />
