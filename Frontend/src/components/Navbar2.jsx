@@ -5,9 +5,11 @@ const Navbar2 = () => {
   return (
     <div className="navbar bg-base-200">
       <div className="navbar-start">
-        <Link to="/" className="btn btn-ghost text-xl gap-2">
-          <Notebook className="size-6 text-primary" />
-          NotesApp
+        <Link to="/">
+          <Notebook className="size-9" />
+        </Link>
+        <Link to="/">
+          <h1 className='text-2xl font-bold'>Notes App</h1>
         </Link>
       </div>
 
