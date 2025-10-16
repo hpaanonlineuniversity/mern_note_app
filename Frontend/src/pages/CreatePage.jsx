@@ -43,7 +43,6 @@ const CreatePage = () => {
 
   return (
     <div className="min-h-screen">
-      <Navbar />
       <div>
         <Link to="/" className="text-blue-500 hover:underline p-4 inline-block">← Back to Home</Link> 
       </div>
