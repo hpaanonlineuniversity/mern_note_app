@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
-import {HomeIcon, PlusIcon} from 'lucide-react'
+import {HomeIcon, PlusIcon, LogIn } from 'lucide-react'
 
 const Navbar = () => {
   return (
@@ -16,6 +16,10 @@ const Navbar = () => {
                     <Link to="/" className='btn btn-secondary'>
                         <HomeIcon className='size-5' />
                         Home
+                    </Link>
+                    <Link to="/login" className='btn btn-secondary'>
+                        <LogIn className='size-5' />
+                        Login
                     </Link>
                 </div>
             </div>
