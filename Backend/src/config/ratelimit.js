@@ -17,6 +17,7 @@ const redisClient = new Redis({
 const limiter = rateLimit({
     store: new RedisStore({
         sendCommand: (...args) => redisClient.call(...args),
+        prefix: 'noteapp:rate-limit:', // Custom prefix ထည့်မယ်
     }),
     windowMs: 30 * 1000, // 30 seconds
     max: 30, // Limit each IP to 100 requests per windowMs
@@ -31,6 +32,7 @@ const limiter = rateLimit({
 const userLimiter = rateLimit({
     store: new RedisStore({
         sendCommand: (...args) => redisClient.call(...args),
+        prefix: 'noteapp:rate-limit:', // Custom prefix ထည့်မယ်
     }),
     windowMs: 10 * 10 * 1000, // 10 minutes
     max: 10, // Limit each user to 100 requests per windowMs
