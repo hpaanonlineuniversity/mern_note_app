@@ -12,17 +12,13 @@ const CreatePage = () => {
   const [isRateLimited, setIsRateLimited] = useState(false);
   const navigate = useNavigate();
 
-  const API_BASE_URL = import.meta.env.DEV 
-  ? 'http://localhost:3000'  // Browser ကနေခေါ်ရင်
-  : 'http://backend:3000';    // Docker container ထဲကခေါ်ရင်
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
 
     setLoading(true);
     try {
-      const response = await axios.post(`${API_BASE_URL}/api/notes`, { title, content });
+      const response = await axios.post('/api/notes', { title, content });
       Toast.success("Note created successfully!");
       setTitle("");
       setContent("");

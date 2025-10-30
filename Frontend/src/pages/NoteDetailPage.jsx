@@ -10,11 +10,6 @@ const NoteDetailPage = () => {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
 
-    const API_BASE_URL = import.meta.env.DEV 
-        ? 'http://localhost:3000'  // Browser ကနေခေါ်ရင်
-        : 'http://backend:3000';    // Docker container ထဲကခေါ်ရင်
-
-
   const navigate = useNavigate();
 
   const { id } = useParams();
@@ -22,7 +17,7 @@ const NoteDetailPage = () => {
   useEffect(() => {
     const fetchNote = async () => {
       try {
-        const res = await axios.get(`${API_BASE_URL}/api/notes/${id}`);
+        const res = await axios.get(`/api/notes/${id}`);
         setNote(res.data);
       } catch (error) {
         console.log("Error in fetching note", error);
@@ -44,10 +39,7 @@ const NoteDetailPage = () => {
     setSaving(true);
 
     try {
-        //const res = await axios.put(`${API_BASE_URL}/api/notes/${id}`);
-
-            // ဒီလို data ကို body ထဲမှာ ထည့်ပေးရမယ်
-    const res = await axios.put(`${API_BASE_URL}/api/notes/${id}`, {
+      const res = await axios.put(`/api/notes/${id}`, {
       title: note.title,
       content: note.content
     });
@@ -66,7 +58,7 @@ const NoteDetailPage = () => {
     if (!window.confirm("Are you sure you want to delete this note?")) return;
 
     try {
-      const res = await axios.delete(`${API_BASE_URL}/api/notes/${id}`);
+      const res = await axios.delete(`/api/notes/${id}`);
       toast.success("Note deleted");
       navigate("/");
     } catch (error) {

@@ -11,14 +11,10 @@ const HomePage = () => {
   const [notes, setNotes] = useState([]);
   const [loading, setLoading] = useState(true);
   
-  const API_BASE_URL = import.meta.env.DEV 
-  ? 'http://localhost:3000'  // Browser ကနေခေါ်ရင်
-  : 'http://backend:3000';    // Docker container ထဲကခေါ်ရင်
-
   useEffect(() => {
     const fetchNotes = async () => {
     try {
-      const response = await axios.get(`${API_BASE_URL}/api/notes`);
+      const response = await axios.get('/api/notes');
       //console.log("Fetched notes:", response.data);
       setNotes(response.data); // Successfully fetched notes, update state
       setIsRateLimited(false); // Reset rate limit state on success

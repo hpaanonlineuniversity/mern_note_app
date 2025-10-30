@@ -8,10 +8,6 @@ const NoteCard = ({note,setNotes}) => {
 
     const navigate = useNavigate();
 
-     const API_BASE_URL = import.meta.env.DEV 
-  ? 'http://localhost:3000'  // Browser ကနေခေါ်ရင်
-  : 'http://backend:3000';    // Docker container ထဲကခေါ်ရင်
-
     const handleDelete =  async (e,id) =>{
         e.preventDefault();
 
@@ -19,7 +15,7 @@ const NoteCard = ({note,setNotes}) => {
 
         try{
             
-            const response = await axios.delete(`${API_BASE_URL}/api/notes/${id}`); 
+            const response = await axios.delete(`/api/notes/${id}`); 
 
             navigate("/");
 
