@@ -1,37 +1,37 @@
-import React from 'react'
-import { Link } from 'react-router'
-import {HomeIcon, PlusIcon, LogIn ,User } from 'lucide-react'
+import { Link } from 'react-router';
+import { HomeIcon, PlusIcon, Notebook } from 'lucide-react';
 
 const Navbar = () => {
   return (
-    <header className='bg-blue-600 text-white p-4'>
-        <div className='container mx-auto'>
-            <div className='flex justify-between items-center'>
-                <Link to="/">
-                <h1 className='text-2xl font-bold'>Notes App</h1>
-                </Link>
-                <div className='space-x-4'>
-                    <Link to="/Create" className='btn btn-primary'>
-                        <PlusIcon className='size-5' />
-                        Create
-                    </Link>
-                    <Link to="/" className='btn btn-secondary'>
-                        <HomeIcon className='size-5' />
-                        Home
-                    </Link>
-                    <Link to="/login" className='btn btn-secondary'>
-                        <LogIn className='size-5' />
-                        Login
-                    </Link>
-                    <Link to="/register" className='btn btn-secondary'>
-                        <User className='size-5' />
-                        Sign Up
-                    </Link>
-                </div>
-            </div>
-        </div>
-    </header>
-  )
-}
+    <div className="navbar bg-base-200">
+      <div className="navbar-start">
+        <Link to="/">
+          <Notebook className="size-9" />
+        </Link>
+        <Link to="/">
+          <h1 className='text-2xl font-bold'>Notes App</h1>
+        </Link>
+      </div>
 
-export default Navbar
+      <div className="navbar-center">
+        <ul className="menu menu-horizontal px-1 gap-1">
+          <li>
+            <Link to="/" className="flex items-center gap-2">
+              <HomeIcon className="size-4" />
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/create" className="flex items-center gap-2">
+              <PlusIcon className="size-4" />
+              Create Note
+            </Link>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  );
+};
+
+export default Navbar;
