@@ -26,7 +26,7 @@ const HomePage = () => {
 
     } catch (error) {
       console.error("Error fetching notes:", error); // Log the full error for debugging
-
+      console.log(error.response.status);
       // Check if the error response exists and if the status code is 429
       if (error.response && error.response.status === 429) {
         setIsRateLimited(true);
